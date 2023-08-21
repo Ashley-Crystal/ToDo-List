@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>To Do List 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <div class="container mx-auto p-8">
+        <h1 class="text-5xl font-bold mb-8 text-center">TO DO LIST</h1>
+        <div class="input-section mb-8">
+            <input placeholder="Todo Name" class="px-2 py-1 rounded-md bg-gray-800 text-white mr-2 js-todo">
+            <input type="date" class="px-2 py-1 rounded-md bg-gray-800 text-white mr-2 js-date">
+            <input type="time" class="px-2 py-1 rounded-md bg-gray-800 text-white mr-2 js-time">
+            <select class="px-2 py-1 rounded-md bg-gray-800 text-white mr-2 js-priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button class="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700" onclick="add();">Add</button>
+            <button class="px-4 py-2 rounded-md bg-red-600 hover:bg-red-700" onclick="clearAll();">Clear All</button>
+        </div>
+        <div class="sorting-dropdown mt-4">
+            <label class="text-white mr-2">Sort by:</label>
+            <select class="px-2 py-1 rounded-md bg-gray-800 text-white" id="sortSelect">
+                <option value="priority">Priority</option>
+                <option value="date-time">Date & Time</option>
+            </select>
+            <button class="px-4 py-2 rounded-md bg-purple-600 hover:bg-purple-700" onclick="sortTasks();">Sort</button>
+        </div>
+
+        <div class="js-todo-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
